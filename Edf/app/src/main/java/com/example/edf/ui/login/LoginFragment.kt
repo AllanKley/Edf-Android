@@ -15,7 +15,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.edf.databinding.FragmentLoginBinding
+import androidx.navigation.fragment.findNavController
 
 import com.example.edf.R
 
@@ -105,14 +107,10 @@ class LoginFragment : Fragment() {
 
         loginButton.setOnClickListener {
             loadingProgressBar.visibility = View.VISIBLE
-
-
-
             loginViewModel.login(
                 usernameEditText.text.toString(),
                 passwordEditText.text.toString()
             )
-
         }
     }
 
@@ -121,6 +119,11 @@ class LoginFragment : Fragment() {
         // TODO : initiate successful logged in experience
         val appContext = context?.applicationContext ?: return
         Toast.makeText(appContext, welcome, Toast.LENGTH_LONG).show()
+
+
+
+
+        findNavController().navigate(R.id.action_loginFragment_to_itemFragment)
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

@@ -3,41 +3,25 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/nav_graph"
-            app:startDestination="@id/FirstFragment">
+            app:startDestination="@id/itemFragment">
 
-    <fragment
-            android:id="@+id/FirstFragment"
-            android:name="com.example.edf.ui.FirstFragment"
-            android:label="@string/first_fragment_label"
-            tools:layout="@layout/fragment_first">
 
-        <action
-                android:id="@+id/action_FirstFragment_to_SecondFragment"
-                app:destination="@id/SecondFragment"/>
+    <fragment android:id="@+id/firstFragment" android:name="com.example.edf.ui.FirstFragment"
+              android:label="fragment_first" tools:layout="@layout/fragment_first">
+        <action android:id="@+id/action_firstFragment_to_secondFragment" app:destination="@id/secondFragment"/>
     </fragment>
 
-    <fragment
-            android:id="@+id/SecondFragment"
-            android:name="com.example.edf.ui.SecondFragment"
-            android:label="@string/second_fragment_label"
-            tools:layout="@layout/fragment_second">
-
-        <action
-                android:id="@+id/action_SecondFragment_to_FirstFragment"
-                app:destination="@id/FirstFragment"/>
+    <fragment android:id="@+id/secondFragment" android:name="com.example.edf.ui.SecondFragment"
+              android:label="fragment_second" tools:layout="@layout/fragment_second">
+        <action android:id="@+id/action_secondFragment_to_firstFragment" app:destination="@id/firstFragment"/>
     </fragment>
 
-    <fragment
-            android:id="@+id/LoginFragment"
-            android:name="com.example.edf.ui.login.LoginViewModel"
-            android:label="@string/login_fragment_label"
-            tools:layout="@layout/fragment_login">
-
-        <action
-                android:id="@+id/action_Login_to_FirstFragment"
-                app:destination="@id/FirstFragment"/>
+    <fragment android:id="@+id/loginFragment" android:name="com.example.edf.ui.login.LoginFragment"
+              android:label="fragment_login" tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_loginFragment_to_firstFragment" app:destination="@id/firstFragment"/>
+        <action android:id="@+id/action_loginFragment_to_itemFragment" app:destination="@id/itemFragment"/>
     </fragment>
-
-
+    <fragment android:id="@+id/itemFragment" android:name="com.example.edf.ItemFragment"
+              android:label="fragment_item_list" tools:layout="@layout/fragment_item_list"/>
 
 </navigation>

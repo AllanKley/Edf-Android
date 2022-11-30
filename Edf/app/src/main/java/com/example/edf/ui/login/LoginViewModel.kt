@@ -4,16 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
-import androidx.navigation.fragment.findNavController
 import com.example.edf.data.LoginRepository
 import com.example.edf.data.Result
 
 import com.example.edf.R
-import com.example.edf.databinding.FragmentSecondBinding
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
-    private var _binding: FragmentSecondBinding? = null
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
@@ -26,7 +23,6 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
         if (result is Result.Success) {
             _loginResult.value = LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         } else {
             _loginResult.value = LoginResult(error = R.string.login_failed)
         }
@@ -40,12 +36,6 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         } else {
             _loginForm.value = LoginFormState(isDataValid = true)
         }
-    }
-
-    fun navigationCall(){
-
-
-
     }
 
     // A placeholder username validation check
