@@ -22,7 +22,7 @@ object PlaceholderContent {
     val ITEM_MAP: MutableMap<String, PlaceholderItem> = HashMap()
 
     // TODO number of items on grid
-    private val COUNT = 6
+    private val COUNT = 8
 
     init {
         // TODO add items to grid
@@ -37,22 +37,15 @@ object PlaceholderContent {
     }
 
     private fun createPlaceholderItem(position: Int): PlaceholderItem {
-        return PlaceholderItem(position.toString(), "Teste " + position, makeDetails(position))
+        return PlaceholderItem(position.toString(), "Teste " + position, "ou")
     }
 
-    private fun makeDetails(position: Int): String {
-        val builder = StringBuilder()
-        builder.append("Details about Item: ").append(position)
-        for (i in 0..position - 1) {
-            builder.append("\nMore details information here.")
-        }
-        return builder.toString()
-    }
+
 
     /**
      * A placeholder item representing a piece of content.
      */
-    data class PlaceholderItem(val id: String, val content: String, val details: String) {
-        override fun toString(): String = content
+    data class PlaceholderItem(val id: String, val content: String, val content2: String) {
+        override fun toString(): String = content + content2
     }
 }

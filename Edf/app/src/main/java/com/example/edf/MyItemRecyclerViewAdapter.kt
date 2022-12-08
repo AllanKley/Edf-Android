@@ -25,20 +25,22 @@ class MyItemRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = values[position]
 
-        holder.contentView.text = item.content
+        holder.contentView.text = "oi"
+        holder.contentView2.text = "ei"
+        holder.imageView.
+
     }
 
-    override fun getItemCount(): Int = values.size
+    override fun getItemCount(): Int = 12
 
     inner class ViewHolder(binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val imageView: ImageView = binding.LoginImage
-        val contentView: TextView = binding.content
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
+
+        val contentView: TextView = binding.content
+        val contentView2: TextView = binding.content2
+        val imageView: ImageView = binding.imageView
+
     }
 
 }
