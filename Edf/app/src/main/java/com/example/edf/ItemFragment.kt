@@ -15,7 +15,7 @@ import com.example.edf.placeholder.PlaceholderContent
  */
 class ItemFragment : Fragment() {
 
-    private var columnCount = 3
+    private var columnCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

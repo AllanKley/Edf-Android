@@ -26,9 +26,9 @@ class MyItemRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.contentView.text = "oi"
-        holder.contentView2.text = "ei"
-        holder.imageView.
+        //holder.contentView.text = "oi"
+        //holder.contentView2.text = "ei"
+
 
     }
 
@@ -37,9 +37,9 @@ class MyItemRecyclerViewAdapter(
     inner class ViewHolder(binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
-        val contentView: TextView = binding.content
-        val contentView2: TextView = binding.content2
-        val imageView: ImageView = binding.imageView
+        //val contentView: TextView = binding.content
+        //val contentView2: TextView = binding.content2
+        //val imageView: ImageView = binding.imageView
 
     }
 
